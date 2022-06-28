@@ -40,4 +40,6 @@ regular expressions
 
 https://www.w3schools.com/jsref/jsref_obj_regexp.asp
 
-### Canvas
+### ResizeObserver
+
+listener for element resizing

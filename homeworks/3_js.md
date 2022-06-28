@@ -1,8 +1,19 @@
-# Homework 3
+# Homework 2
 
-- calculator project => add functionality to the buttons
+-   calculator project => create functions
 
-  - it will write the output
-  - automatically computes the result into result field
-  - user can write in the text area
-  - on blur (while text area looses focus) it will prettify the text
+    -   create function which gets two numbers and sign (as a string) and returns result
+
+            const doMath = (a, b, sign) => { ... }
+
+    -   create function which split string into sings and numbers => convert numbers to a number type
+
+            const readInput = (input) => { ... }
+
+    -   create a function that joins characters into string with spaces
+
+            const createValidInput = (chars) => { ... }
+
+-   create a function that can process readed input, it will validate the input
+
+         const process = () => { ... }
