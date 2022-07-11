@@ -14,7 +14,7 @@ or
         }
     </script>
 
-comments: // or /_ ... _/
+comments: // or /\* ... \*/
 
 console.log() ... log into console
 
