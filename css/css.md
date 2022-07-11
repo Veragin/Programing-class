@@ -2,7 +2,7 @@
 
 You can define styles, how should components look
 
-can be linked in headdersvia:
+can be linked in headders via:
 
     <link rel="stylesheet" href="mystyle.css">
 
@@ -11,7 +11,7 @@ can be linked in headdersvia:
 styles will overvrite the previous
 
 -   \* ... all elements
--   tag ... as it is
+-   tag ... his name
 -   class ... prefix .
 -   id ... prefix # (unique html element)
 
@@ -24,14 +24,27 @@ styles will overvrite the previous
 -   vh, vw
 -   rem, em
 -   calc(), min(), max()
--   #fff, rgb(), rgba(), hsl(), linear-gradient()
+
+## Color
+
+-   white, green, yellow, lime, ...
+-   transparent
+-   #fff
+-   rgb()
+-   rgba()
+-   hsl()
+
+background:
+
+-   linear-gradient(180deg, white 0%, #525252 100%)
+-   radial-gradient(black, transparent);
 
 ## Positioning
 
--   width, height, max-width, min-width, max-height, min-height
--   padding, border, margin
 -   display = none | block | flex | grid
 -   position = static | relative | fixed | absolute | sticky
+-   width, height, max-width, min-width, max-height, min-height
+-   padding, border, margin
 -   box-sizing
 
 ## Flex
@@ -52,6 +65,7 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 -   border-radius
 -   background-color
 -   z-index
+-   transform
 
 !important ... overwrites following rules (dont use it)
 
@@ -105,3 +119,11 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
         animation-name: example;
         animation-duration: 4s;
     }
+
+## Fontawsome (icons)
+
+-   https://fontawesome.com/
+
+## Animate
+
+-   https://animate.style/
