@@ -1,4 +1,4 @@
-# Homework 2
+# Homework 3
 
 ## calculator project
 
@@ -27,13 +27,13 @@
     -   use process() to process the parsed input
     -   display the result
 
-        const calculate = () => { ... }
+            const calculate = () => { ... }
 
 -   create function that will fire onblur, it should:
-
-        const prettify = () => { ... }
 
     -   get the value from input
     -   use parseInput() to get signs and numbers
     -   use createValidInput() to create valud input
     -   set input tag with this valid value
+
+            const prettify = () => { ... }
