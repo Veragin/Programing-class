@@ -24,3 +24,9 @@ used for controlling the computer via commands
 ## Clone the project
 
     git clone https://github.com/Veragin/Programing-class.git
+
+## Update the project
+
+stand in the project directory
+
+    git pull
