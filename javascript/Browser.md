@@ -4,12 +4,20 @@
 
     const button = document.getElementById('buttonId');
 
+    const buttons = document.getElementByClassName('redButton');
+
 ### EventListeners
 
 https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
 
     button.addEventListener('click', (evt) => { });
     document.addEventListener('keydown', (evt) => { });
+
+### Create html element and add to DOM
+
+    const button = document.createElement('button');
+
+    document.body.append(button);
 
 ### Date
 
