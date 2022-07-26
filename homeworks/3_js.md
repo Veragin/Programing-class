@@ -1,5 +1,21 @@
 # Homework 3
 
+## practise css again
+
+-   create your own project
+
+or
+
+-   if you dont have any idea, pick one from this site:
+
+    https://www.figma.com/community
+
+or
+
+-   create this one
+
+    https://www.figma.com/file/CmyPk3V2QKiVKvmONjVuQl/%F0%9F%8E%A8-Creative-Website-Template-for-Figma-(Community)?node-id=164%3A107372
+
 ## calculator project
 
 -   create functions:
@@ -8,13 +24,13 @@
 
             const doMath = (a, b, sign) => { ... }
 
-    -   create function which split string into sings and numbers => convert numbers to a number type
+    -   create function which split string into sings and numbers (other characters are ignored) => convert numbers to a number type
 
-            const parseInput = (input) => { ... }
+            const parseInput = (inputString) => { ... }
 
     -   create a function that can process parsed input, it will validate the input. It will use the doMath function
 
-            const process = () => { ... }
+            const process = (input) => { ... }
 
     -   create a function that joins characters into string with spaces
 
