@@ -1,6 +1,6 @@
 # Homework 3
 
-## practise css again
+## practise css again (if you are not sure with it)
 
 -   create your own project
 
@@ -22,19 +22,41 @@ or
 
     -   create function which gets two numbers and sign (as a string) and returns result
 
-            const doMath = (a, b, sign) => { ... }
+            const doMath = (a, sign, b) => { ... }
+
+        example:
+
+            doMath(20, '+', 10) // return 30
+            doMath(20, '/', 10) // return 2
 
     -   create function which split string into sings and numbers (other characters are ignored) => convert numbers to a number type
 
             const parseInput = (inputString) => { ... }
 
-    -   create a function that can process parsed input, it will validate the input. It will use the doMath function
+        example:
+
+            parseInput('20 +a10') // return [20, '+', 10]
+            parseInput('1000.2 - +2') // return [1000.2, '-', '+', 2]
+
+    -   create a function that can process parsed input, it will validate the input. It will use the doMath function inside
 
             const process = (input) => { ... }
+
+        example:
+
+            process([20, '+', 10]) // return 30
+            process([1000.2, '-', '+', 2]) // return 998.2
+            process([1, '/', '*', 2]) // return null
+            process([1, '/', 0]) // return null
 
     -   create a function that joins characters into string with spaces
 
             const createValidInput = (chars) => { ... }
+
+        example:
+
+            createValidInput([20, '+', 10]) // return '20 + 10'
+            createValidInput([1000.2, '-', '+', 2]) // return '1000.2 - 2'
 
 -   create function that will fire onchange, it should:
 
