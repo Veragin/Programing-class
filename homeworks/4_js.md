@@ -12,3 +12,8 @@
 -   on blur (while text area looses focus) it will prettify the text
 
 ## sudoku project
+
+-   create a title with different font (google fonts)
+-   two sudoku tables (input & output) generated from js
+-   inputs of both tabels are filling js arrays
+-   between tabels will be button with "Solve" label
