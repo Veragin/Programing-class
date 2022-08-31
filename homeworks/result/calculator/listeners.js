@@ -1,6 +1,24 @@
-const initListeners = () => {
-    const inputElement = document.getElementById("calulatorInput");
+const inputElement = document.getElementById("calulatorInput");
+const resultElement = document.getElementById("result");
 
+const showTheResult = () => {
+    try {
+        const result = processInputString(inputElement.value);
+        resultElement.innerText = result;
+    } catch (e) {
+        resultElement.innerText = e.message;
+    }
+};
+
+const initInput = () => {
+    inputElement.addEventListener("keydown", (e) => {
+        if (e.code === "Enter") {
+            showTheResult();
+        }
+    });
+};
+
+const initButtonListeners = () => {
     const addCharToInput = (char, withSpace) => {
         if (withSpace) {
             inputElement.value = `${inputElement.value} ${char} `;
@@ -62,6 +80,10 @@ const initListeners = () => {
 
     const btn17 = document.getElementById("btn.");
     btn17.addEventListener("click", () => addCharToInput("."));
+
+    const btn18 = document.getElementById("btn=");
+    btn18.addEventListener("click", showTheResult);
 };
 
-initListeners();
+initInput();
+initButtonListeners();
