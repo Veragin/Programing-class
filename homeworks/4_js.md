@@ -12,9 +12,15 @@
 -   on blur (while text area looses focus) it will prettify the text
 -   after pressing = or enter the valid formula saved into history
 
-## sudoku project
+## sudoku solver project
 
 -   create a title with different font (google fonts)
 -   two sudoku tables (input & output) generated from js
 -   inputs of both tabels are filling js arrays
 -   between tabels will be button with "Solve" label
+
+-   create class Sudoku that will in constructor create html tabel and conncet them with the data property
+-   it has property data with arrays of numbers
+-   chianging html table will change data property
+-   has method set(i, j, value) witch will set data property and right value in html table
+-   has a method that can append html table to html container
