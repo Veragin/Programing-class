@@ -19,8 +19,12 @@
 -   inputs of both tabels are filling js arrays
 -   between tabels will be button with "Solve" label
 
--   create class Sudoku that will in constructor create html tabel and conncet them with the data property
+-   create class Sudoku that will in constructor create html tabel and conncets them with the data property
 -   it has property data with arrays of numbers
 -   chianging html table will change data property
 -   has method set(i, j, value) witch will set data property and right value in html table
 -   has a method that can append html table to html container
+
+-   create SudokuSolver class that will solve sudoku
+-   main idea is to try every possible solution and find one which is valid
+-   you need to remember to what cell was the user input (marked as isFixed)

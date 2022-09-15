@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    gap: 20px;
+}
+
+.sudoku {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    border: 2px solid black;
+    width: min-content;
+}
+
+.sudokuCell {
+    width: 15px;
+    height: 15px;
+    text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
