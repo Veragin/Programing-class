@@ -7,12 +7,16 @@ class SudokuSolver {
 
         this.load(inputSudoku);
         if (!this.areDataValid()) {
-            throw new Error("Invalid input");
+            throw new InvalidInputError();
         }
 
         try {
             this.solveStep(0, 0);
-        } catch (e) {}
+        } catch (e) {
+            if (!(e instanceof EndError)) {
+                throw e;
+            }
+        }
 
         this.setDataToOutput();
     };
@@ -35,10 +39,9 @@ class SudokuSolver {
 
         if (this.areDataValid()) {
             this.solveStep(...nextIndexes(i, j));
-            return this.solveStep(i, j);
-        } else {
-            return this.solveStep(i, j);
         }
+
+        return this.solveStep(i, j);
     };
 
     load = (inputSudoku) => {
@@ -119,7 +122,7 @@ const nextIndexes = (i, j) => {
     const newI = j + 1 === newJ ? i : i + 1;
 
     if (newI >= SIZE) {
-        throw new Error("You are on end");
+        throw new EndError();
     }
 
     return [newI, newJ];
