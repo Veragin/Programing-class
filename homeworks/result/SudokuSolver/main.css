@@ -3,11 +3,15 @@ body {
     gap: 20px;
 }
 
+.red {
+    color: red;
+}
+
 .sudoku {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(9, 1fr);
-    border: 2px solid black;
+    border: 3px solid black;
     width: min-content;
 }
 
@@ -15,8 +19,30 @@ body {
     width: 15px;
     height: 15px;
     text-align: center;
+    border: 1px solid lightgray;
 }
 
+.sudokuCell:nth-child(9n + 3),
+.sudokuCell:nth-child(9n + 6) {
+    border-right-color: black;
+}
+
+.sudokuCell:nth-child(9n + 4),
+.sudokuCell:nth-child(9n + 7) {
+    border-left-color: black;
+}
+
+.sudokuCell:nth-child(n + 19):nth-child(-n + 27),
+.sudokuCell:nth-child(n + 46):nth-child(-n + 54) {
+    border-bottom-color: black;
+}
+
+.sudokuCell:nth-child(n + 28):nth-child(-n + 36),
+.sudokuCell:nth-child(n + 55):nth-child(-n + 63) {
+    border-top-color: black;
+}
+
+/* remove arrows from inputs*/
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;

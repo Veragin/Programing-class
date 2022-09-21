@@ -1,3 +1,5 @@
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 class SudokuSolver {
     data = []; //{value: number, isFixed: boolean}[][]
     outputSudoku = null;
@@ -21,7 +23,7 @@ class SudokuSolver {
         this.setDataToOutput();
     };
 
-    solveStep = (i, j) => {
+    solveStep = async (i, j) => {
         if (this.data[i][j].isFixed) {
             return this.solveStep(...nextIndexes(i, j));
         }
@@ -38,7 +40,7 @@ class SudokuSolver {
         }
 
         if (this.areDataValid()) {
-            this.solveStep(...nextIndexes(i, j));
+            await this.solveStep(...nextIndexes(i, j));
         }
 
         return this.solveStep(i, j);
@@ -52,7 +54,14 @@ class SudokuSolver {
 
             for (let j = 0; j < SIZE; j++) {
                 const value = d[j];
-                newRow.push({ value, isFixed: value !== null });
+                const isFixed = value !== null;
+                newRow.push({ value, isFixed });
+
+                if (isFixed) {
+                    this.outputSudoku.elements[i][j].classList.add("red");
+                } else {
+                    this.outputSudoku.elements[i][j].classList.remove("red");
+                }
             }
         }
     };
@@ -111,7 +120,7 @@ class SudokuSolver {
 
         for (let i = 0; i < SIZE; i++) {
             for (let j = 0; j < SIZE; j++) {
-                outputSudoku.set(i, j, this.data[i][j].value);
+                this.outputSudoku.set(i, j, this.data[i][j].value);
             }
         }
     };

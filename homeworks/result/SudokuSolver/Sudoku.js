@@ -47,4 +47,6 @@ class Sudoku {
         this.data[i][j] = value ?? null;
         this.elements[i][j].value = value ?? "";
     };
+
+    load = (data) => {};
 }
