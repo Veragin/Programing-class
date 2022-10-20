@@ -41,4 +41,15 @@ https://github.com/git-guides/install-git
 
 ## Workflow
 
+-   create your working branch
+-   add new code (do some changes) as a commits
+-   create Merge Request (Pull reaquest) ... request to merge your branch into master branch
+-   put on Code Review ... another programmer check your changes
+-   put on testing ... tester will test your work
+-   merge changes into master branch
+
 ## Submodules
+
+-   `git submodule init` ... initialize submodules
+-   `git submodule add` ... adds submodule from another repository
+-   `git submodule update` ... set submodules to right version
