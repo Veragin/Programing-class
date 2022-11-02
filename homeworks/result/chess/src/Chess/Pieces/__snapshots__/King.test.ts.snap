@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`King can move 1`] = `
+Array [
+  Array [
+    0,
+    0,
+  ],
+  Array [
+    0,
+    1,
+  ],
+  Array [
+    0,
+    2,
+  ],
+  Array [
+    1,
+    0,
+  ],
+  Array [
+    1,
+    2,
+  ],
+  Array [
+    2,
+    0,
+  ],
+  Array [
+    2,
+    1,
+  ],
+  Array [
+    2,
+    2,
+  ],
+]
+`;

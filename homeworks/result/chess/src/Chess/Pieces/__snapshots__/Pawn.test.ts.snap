@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pawn can move 1`] = `
+Array [
+  Array [
+    2,
+    1,
+  ],
+  Array [
+    2,
+    2,
+  ],
+]
+`;

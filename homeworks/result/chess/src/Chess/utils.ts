@@ -1,12 +1,3 @@
-const letters = ["A", "B", "C", "D", "E", "F", "G", "H"] as TY[];
+import { BOARD_SIZE } from "./Const";
 
-export const pos2Index = (pos: TPos) => {
-    return {
-        i: pos[0] - 1,
-        j: letters.indexOf(pos[1]),
-    };
-};
-
-export const index2Pos = ({ i, j }: { i: number; j: number }): TPos => {
-    return [(i + 1) as TX, letters[j]];
-};
+export const isOnBoard = (i: number) => i >= 0 && i < BOARD_SIZE - 1;
