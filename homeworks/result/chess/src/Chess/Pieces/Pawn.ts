@@ -2,10 +2,9 @@ import { Pos } from "../Pos";
 import { ChessPiece } from "./ChessPiece";
 
 export class Pawn extends ChessPiece {
-    move(board: TBoard, myPos: Pos) {
+    move(board: TBoard) {
         const res: Pos[] = [];
-        const i = myPos.i;
-        const j = myPos.j;
+        const { i, j } = this.findMyPosInBoard(board);
 
         const newI = this.player === "black" ? i - 1 : i + 1;
 

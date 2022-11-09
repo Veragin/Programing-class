@@ -8,10 +8,10 @@ const createData = () => {
     const king = new King("white");
     const pos = new Pos({ x: 2, y: "B" });
 
-    board.board[pos.i][pos.j] = king;
+    board.set(king, pos);
 
     return {
-        board: board.board,
+        board: board,
         king,
         pos,
     };
@@ -21,9 +21,9 @@ describe("King", () => {
     it("can move", () => {
         const { board, king, pos } = createData();
 
-        board[pos.i + 1][pos.j + 1] = new Pawn("black");
+        board.set(new Pawn("black"), new Pos({ i: pos.i + 1, j: pos.j + 1 }));
 
-        const res = king.move(board, pos);
+        const res = king.move(board.board);
         expect(res.length).toBe(8);
 
         const exp = res.map((pos) => pos.export());
@@ -31,13 +31,10 @@ describe("King", () => {
     });
 
     it("cannt move if is blocked by figure", () => {
-        const { board, king, pos } = createData();
-        board[pos.i][pos.j] = null;
-        pos.i = 0;
-        pos.j = 0;
-        board[pos.i][pos.j] = king;
+        const { board, king } = createData();
+        board.set(king, new Pos({ i: 0, j: 0 }));
 
-        const res1 = king.move(board, pos);
+        const res1 = king.move(board.board);
         expect(res1.length).toBe(3);
     });
 });

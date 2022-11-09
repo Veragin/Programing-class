@@ -5,24 +5,24 @@ import { Pawn } from "./Pawn";
 const createData = () => {
     const board = new Board();
     const pawn = new Pawn("white");
-    const pawnPos = new Pos({ x: 2, y: "B" });
+    const pos = new Pos({ x: 2, y: "B" });
 
-    board.board[pawnPos.i][pawnPos.j] = pawn;
+    board.set(pawn, pos);
 
     return {
-        board: board.board,
+        board: board,
         pawn,
-        pawnPos,
+        pos,
     };
 };
 
 describe("Pawn", () => {
     it("can move", () => {
-        const { board, pawn, pawnPos } = createData();
+        const { board, pawn, pos } = createData();
 
-        board[pawnPos.i + 1][pawnPos.j + 1] = new Pawn("black");
+        board.set(new Pawn("black"), new Pos({ i: pos.i + 1, j: pos.j + 1 }));
 
-        const res = pawn.move(board, pawnPos);
+        const res = pawn.move(board.board);
         expect(res.length).toBe(2);
 
         const exp = res.map((pos) => pos.export());
@@ -30,16 +30,16 @@ describe("Pawn", () => {
     });
 
     it("cannt move if is blocked by figure", () => {
-        const { board, pawn, pawnPos } = createData();
+        const { board, pawn, pos } = createData();
 
-        board[pawnPos.i + 1][pawnPos.j] = new Pawn("black");
+        board.set(new Pawn("black"), new Pos({ i: pos.i + 1, j: pos.j }));
 
-        const res1 = pawn.move(board, pawnPos);
+        const res1 = pawn.move(board.board);
         expect(res1.length).toBe(0);
 
-        board[pawnPos.i + 1][pawnPos.j] = new Pawn("white");
+        board.set(new Pawn("white"), new Pos({ i: pos.i + 1, j: pos.j + 1 }));
 
-        const res2 = pawn.move(board, pawnPos);
+        const res2 = pawn.move(board.board);
         expect(res2.length).toBe(0);
     });
 });

@@ -1,4 +1,6 @@
 import { BOARD_SIZE } from "./Const";
+import { ChessPiece } from "./Pieces/ChessPiece";
+import { Pos } from "./Pos";
 
 export class Board {
     board: TBoard = [];
@@ -10,5 +12,14 @@ export class Board {
                 this.board[i].push(null);
             }
         }
+    }
+
+    set(piece: ChessPiece, pos: Pos) {
+        try {
+            const { i, j } = piece.findMyPosInBoard(this.board);
+            this.board[i][j] = null;
+        } catch {}
+
+        this.board[pos.i][pos.j] = piece;
     }
 }
