@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bishop can move 1`] = `
+Array [
+  Array [
+    2,
+    2,
+  ],
+  Array [
+    3,
+    3,
+  ],
+  Array [
+    2,
+    0,
+  ],
+  Array [
+    0,
+    0,
+  ],
+  Array [
+    0,
+    2,
+  ],
+]
+`;

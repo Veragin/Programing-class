@@ -48,6 +48,10 @@ export class Pos {
         this._j = j;
     }
 
+    isEqual(pos: Pos) {
+        return this.i === pos.i && this.j === pos.j;
+    }
+
     export() {
         return [this._i, this._j];
     }
