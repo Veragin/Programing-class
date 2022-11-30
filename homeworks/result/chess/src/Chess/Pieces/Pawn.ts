@@ -2,6 +2,8 @@ import { Pos } from "../Pos";
 import { ChessPiece } from "./ChessPiece";
 
 export class Pawn extends ChessPiece {
+    readonly type: TPieceType = "pawn";
+
     move(board: TBoard) {
         const res: Pos[] = [];
         const { i, j } = this.findMyPosInBoard(board);

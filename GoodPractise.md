@@ -1,9 +1,11 @@
 # Good practice
 
+## Dont repeat yourselfs
+
 ## Functional programing
 
-- work with immutable simple data objects
-- if you need to modify object => create a new one
+-   work with immutable simple data objects
+-   if you need to modify object => create a new one
 
 ## Dont use else => return
 
@@ -56,18 +58,17 @@ use
 
 ## use good naming of variables
 
-- try to focus to naming of variables, that describe its meaning
+-   try to focus to naming of variables, that describe its meaning
 
 ## get, find, list prefix for functions
 
 while function has prefix:
 
-- get => always returns an item or throws an error
-- find => returns item or null
-- list => return array of items or empty array
+-   get => always returns an item or throws an error
+-   find => returns item or null
+-   list => return array of items or empty array
 
 ## null vs undefined
 
-- null ... value, that i know is possible
-- undefined ... value is missing
-sur
+-   null ... value, that i know is possible
+-   undefined ... value is missing

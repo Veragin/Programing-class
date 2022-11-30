@@ -14,6 +14,10 @@ export class Board {
         }
     }
 
+    get(pos: Pos) {
+        return this.board[pos.i][pos.j];
+    }
+
     set(piece: ChessPiece, pos: Pos) {
         try {
             const { i, j } = piece.findMyPosInBoard(this.board);
@@ -21,5 +25,17 @@ export class Board {
         } catch {}
 
         this.board[pos.i][pos.j] = piece;
+    }
+
+    copy(): Board {
+        const newBoard = new Board();
+        newBoard.board = this.board.map((r) => [...r]);
+        return newBoard;
+    }
+
+    export(): TBoardTileExport[][] {
+        return this.board.map((r) =>
+            r.map((t) => (t === null ? null : { piece: t.type, player: t.player }))
+        );
     }
 }

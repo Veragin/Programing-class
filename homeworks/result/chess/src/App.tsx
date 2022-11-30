@@ -1,5 +1,8 @@
 import { Tile } from "./Tile";
 import styled from "styled-components";
+import { Chess } from "./Chess/Chess";
+
+const chess = new Chess();
 
 const App = () => {
     return (

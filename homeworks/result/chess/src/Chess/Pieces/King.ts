@@ -3,6 +3,8 @@ import { isOnBoard } from "../utils";
 import { ChessPiece } from "./ChessPiece";
 
 export class King extends ChessPiece {
+    readonly type: TPieceType = "king";
+
     move(board: TBoard): Pos[] {
         const res: Pos[] = [];
         const { i, j } = this.findMyPosInBoard(board);

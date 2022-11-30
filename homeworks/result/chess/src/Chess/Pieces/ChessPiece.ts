@@ -2,6 +2,8 @@ import { BOARD_SIZE } from "../Const";
 import { Pos } from "../Pos";
 
 export class ChessPiece {
+    readonly type: TPieceType = "pawn";
+
     constructor(public player: TPlayer) {}
 
     move(board: TBoard): Pos[] {
