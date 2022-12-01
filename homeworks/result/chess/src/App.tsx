@@ -1,22 +1,21 @@
-import { Tile } from "./Tile";
 import styled from "styled-components";
 import { Chess } from "./Chess/Chess";
+import { ChessBoard } from "./ChessBoard/ChessBoard";
 
 const chess = new Chess();
 
 const App = () => {
     return (
-        <div className="App">
-            <Tile title="Chess lesson">
-                <StyledBox>asdas</StyledBox>
-            </Tile>
-        </div>
+        <>
+            <StyledTitle>Chess lesson</StyledTitle>
+            <ChessBoard chess={chess} />
+        </>
     );
 };
 
-const StyledBox = styled.div`
-    background-color: green;
-    padding: 50px;
+const StyledTitle = styled.span`
+    font-size: 4em;
+    padding: 20px;
 `;
 
 export default App;

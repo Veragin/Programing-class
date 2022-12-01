@@ -1,6 +1,6 @@
-import assert from "assert";
+import { assert } from "./utils";
 
-const letters = ["A", "B", "C", "D", "E", "F", "G", "H"] as TY[];
+export const letters = ["A", "B", "C", "D", "E", "F", "G", "H"] as TY[];
 
 type TPos = { x: TX; y: TY };
 type TIndex = { i: number; j: number };

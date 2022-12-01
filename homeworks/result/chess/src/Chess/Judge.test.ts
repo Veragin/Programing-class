@@ -9,7 +9,7 @@ import { Pawn } from "./Pieces/Pawn";
 
 const createData = () => {
     const board = new Board();
-    const judge = new Judge(board);
+    const judge = new Judge();
     const king = new King("white");
     const pos = new Pos({ x: 3, y: "B" });
     board.set(king, pos);
@@ -24,9 +24,9 @@ const createData = () => {
 
 describe("Judge", () => {
     it("can handle empty board", () => {
-        const { judge } = createData();
+        const { judge, board } = createData();
 
-        const res = judge.isKingInDanger("white");
+        const res = judge.isKingInDanger("white", board.board);
         expect(res).toBe(false);
     });
 
@@ -35,7 +35,7 @@ describe("Judge", () => {
         board.set(new King("white"), new Pos({ x: 4, y: "D" }));
 
         try {
-            judge.isKingInDanger("white");
+            judge.isKingInDanger("white", board.board);
             throw new TestFailedError();
         } catch (e) {
             if (e instanceof MultiplesdameKingsError) {
@@ -50,15 +50,15 @@ describe("Judge", () => {
         const { judge, board, pos } = createData();
         board.set(new Bishop("black"), new Pos({ i: pos.i + 4, j: pos.j + 4 }));
 
-        let res = judge.isKingInDanger("white");
+        let res = judge.isKingInDanger("white", board.board);
         expect(res).toBe(true);
 
         board.set(new Pawn("black"), new Pos({ i: pos.i + 3, j: pos.j + 3 }));
-        res = judge.isKingInDanger("white");
+        res = judge.isKingInDanger("white", board.board);
         expect(res).toBe(false);
 
         board.set(new Pawn("white"), new Pos({ i: pos.i + 3, j: pos.j + 3 }));
-        res = judge.isKingInDanger("white");
+        res = judge.isKingInDanger("white", board.board);
         expect(res).toBe(false);
     });
 });
