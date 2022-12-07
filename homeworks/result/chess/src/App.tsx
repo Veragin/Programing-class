@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Chess } from "./Chess/Chess";
 import { ChessBoard } from "./ChessBoard/ChessBoard";
+import { Test } from "./Test";
 
 const chess = new Chess();
 
