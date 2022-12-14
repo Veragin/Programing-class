@@ -14,28 +14,28 @@ export class Board {
         }
     }
 
-    get(pos: Pos) {
+    get = (pos: Pos) => {
         return this.board[pos.i][pos.j];
-    }
+    };
 
-    set(piece: ChessPiece, pos: Pos) {
+    set = (piece: ChessPiece, pos: Pos) => {
         try {
             const { i, j } = piece.findMyPosInBoard(this.board);
             this.board[i][j] = null;
         } catch {}
 
         this.board[pos.i][pos.j] = piece;
-    }
+    };
 
-    copy(): Board {
+    copy = (): Board => {
         const newBoard = new Board();
         newBoard.board = this.board.map((r) => [...r]);
         return newBoard;
-    }
+    };
 
-    export(): TBoardTileExport[][] {
+    export = (): TBoardTileExport[][] => {
         return this.board.map((r) =>
             r.map((t) => (t === null ? null : { piece: t.type, player: t.player }))
         );
-    }
+    };
 }

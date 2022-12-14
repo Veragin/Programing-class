@@ -17,30 +17,6 @@ describe("Pos", () => {
         expect(pos.y).toBe("F");
     });
 
-    it("can set indexes", () => {
-        const pos = createPos();
-
-        pos.i = 0;
-        pos.j = 0;
-
-        expect(pos.i).toBe(0);
-        expect(pos.j).toBe(0);
-        expect(pos.x).toBe(1);
-        expect(pos.y).toBe("A");
-    });
-
-    it("can set pos", () => {
-        const pos = createPos();
-
-        pos.x = 5;
-        pos.y = "H";
-
-        expect(pos.i).toBe(4);
-        expect(pos.j).toBe(7);
-        expect(pos.x).toBe(5);
-        expect(pos.y).toBe("H");
-    });
-
     it("can compare by isEqual", () => {
         const pos1 = createPos();
         const pos2 = createPos();

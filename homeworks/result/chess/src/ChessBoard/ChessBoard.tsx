@@ -1,3 +1,4 @@
+import { observer } from "mobx-react-lite";
 import { useRef, useState } from "react";
 import styled from "styled-components";
 import { Chess } from "../Chess/Chess";
@@ -9,7 +10,7 @@ type Props = {
     chess: Chess;
 };
 
-export const ChessBoard = ({ chess }: Props) => {
+export const ChessBoard = observer(({ chess }: Props) => {
     const board = chess.getBoard();
 
     const dragOverRef = useRef<Pos | null>(null);
@@ -68,7 +69,7 @@ export const ChessBoard = ({ chess }: Props) => {
             ))}
         </StyledTable>
     );
-};
+});
 
 const StyledTable = styled.div`
     display: grid;

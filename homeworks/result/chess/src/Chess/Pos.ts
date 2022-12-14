@@ -1,5 +1,3 @@
-import { assert } from "./utils";
-
 export const letters = ["A", "B", "C", "D", "E", "F", "G", "H"] as TY[];
 
 type TPos = { x: TX; y: TY };
@@ -31,21 +29,6 @@ export class Pos {
     }
     get j() {
         return this._j;
-    }
-
-    set x(x: TX) {
-        this._i = x - 1;
-    }
-    set y(y: TY) {
-        this._j = letters.indexOf(y);
-    }
-    set i(i: number) {
-        assert(i >= 0 && i < 8, `${i} is out of index range`);
-        this._i = i;
-    }
-    set j(j: number) {
-        assert(j >= 0 && j < 8, `${j} is out of index range`);
-        this._j = j;
     }
 
     isEqual(pos: Pos) {
