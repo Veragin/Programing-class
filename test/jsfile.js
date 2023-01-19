@@ -1,50 +1,41 @@
-class Animal {
-    #name = "noname";
-    age = 1;
-    numberOfLegs = 2;
+const btn = document.getElementById("btn");
+const refreshElem = document.getElementById("refresh");
+const resElem = document.getElementById("data");
+const downloadElem = document.getElementById("download");
 
-    constructor(initAge, initName) {
-        this.age = initAge;
-        this.name = initName;
+let text = "";
+let res = "";
 
-        this.run();
-    }
+btn.addEventListener("change", async (e) => {
+    let input = e.target;
 
-    run() {
-        console.log("run as an animal", this.#name);
-    }
+    console.log(input);
+    let reader = new FileReader();
+    reader.onload = function () {
+        text = String(reader.result);
+        processData(text);
+    };
+    reader.readAsText(input.files[0]);
+});
 
-    walk() {
-        console.log(`walks on ${this.numberOfLegs} legs`);
-    }
-}
+refreshElem.addEventListener("click", () => processData());
+downloadElem.addEventListener("click", () => downloadFile());
 
-class Dog extends Animal {
-    numberOfLegs = 4;
+const processData = () => {
+    const data = text.split("\n");
+    const split = data.map((s) => s.split("-"));
+    split.map((s) => (Math.random() < 0.5 ? s : s.reverse()));
+    const mixed = split.map((s) => s.join("\t"));
 
-    constructor(initName) {
-        super(10, initName);
-    }
+    res = mixed.join("\n");
+    resElem.innerText = res;
+};
 
-    run() {
-        console.log("run as an dog");
-    }
-
-    walk() {
-        super.walk();
-        this.numberOfLegs--;
-    }
-}
-
-const a = 2;
-
-switch (a) {
-    case 0:
-        console.log("zero");
-        break;
-    case 1:
-        console.log("one");
-        break;
-    default:
-        console.log("default");
-}
+const downloadFile = () => {
+    const link = document.createElement("a");
+    const file = new Blob([res], { type: "text/plain" });
+    link.href = URL.createObjectURL(file);
+    link.download = "file.txt";
+    link.click();
+    URL.revokeObjectURL(link.href);
+};
